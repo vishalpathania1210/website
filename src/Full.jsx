@@ -7,7 +7,7 @@ import websiteimage from "./assets/websiteimage.png";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
-
+import { Heart, Target, Handshake, Sparkles } from "lucide-react";
 
 const Full = () => {
   const mentorshipref = useRef(null);
@@ -31,6 +31,25 @@ const Full = () => {
       resetForm();
     },
   });
+
+  const features = [
+    {
+      icon: <Heart className="w-8 h-8 text-[#f1b60f]" />,
+      title: "Passion Over Payment",
+      desc: "Your dedication matters more than your wallet. Serious aspirants deserve guidance.",
+    },
+    {
+      icon: <Target className="w-8 h-8 text-[#f1b60f]" />,
+      title: "Clear Strategy",
+      desc: "Proven methods that work with minimal resources. Smart work beats expensive courses.",
+    },
+    {
+      icon: <Handshake className="w-8 h-8 text-[#f1b60f]" />,
+      title: "Personal Support",
+      desc: "Direct access to personalized mentorship. We'll find a way that works for you.",
+    },
+  ];
+  
 
   const plans = [
     {
@@ -205,7 +224,7 @@ Small batches, practical strategy, and personal guidance to turn preparation int
     {[
       "6× IAS Prelims Qualified",
       "3× IAS Mains Qualified",
-      "Former Unacademy Mentor",
+      "Dedicated UPSC & PCS Mentor",
       "Independent Personal Mentor",
     ].map((text, index) => (
       <motion.div
@@ -245,6 +264,133 @@ Small batches, practical strategy, and personal guidance to turn preparation int
   </motion.div>
 </div>
 </div>
+
+{/* dedication section */}
+<section className="relative bg-[#f8f9fa] text-gray-800 py-20 overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#ffffff] via-[#fafafa] to-[#f1f1f1] opacity-70" />
+
+      <div className="relative max-w-6xl mx-auto px-6 text-center">
+        {/* Icon with fade-up */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex justify-center mb-6"
+        >
+          <div className="p-4 bg-gradient-to-tr from-[#f1b60f] to-[#b8860b] rounded-full shadow-md">
+            <Sparkles className="w-7 h-7 text-white" />
+          </div>
+        </motion.div>
+
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-playfair font-bold mb-4"
+        >
+          <span className="bg-gradient-to-r from-[#1a1a1a] to-[#d4af37] bg-clip-text text-transparent">
+            Your Dedication, My Commitment
+          </span>
+        </motion.h2>
+
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-lg text-gray-600 mb-12"
+        >
+          Financial constraints should <span className="font-semibold text-gray-800">never</span> stop a dedicated aspirant
+        </motion.p>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 * i, duration: 0.6 }}
+              whileHover={{ scale: 1.05, boxShadow: "0px 8px 24px rgba(0,0,0,0.1)" }}
+              className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center hover:shadow-md transition-all"
+            >
+              <div className="flex justify-center items-center mb-4">
+                <div className="p-4 bg-gray-100 rounded-full">{item.icon}</div>
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      <section className="relative bg-[#f8f9fa] text-gray-800 py-16 overflow-hidden">
+      {/* Soft background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#fff] via-[#fafafa] to-[#f4f1ea] opacity-80" />
+
+      <div className="relative max-w-4xl mx-auto px-6 text-center">
+        {/* Card container */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-white/70 backdrop-blur-md rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.05)] border border-gray-100 p-10 md:p-12"
+        >
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-700 mb-4 leading-relaxed"
+          >
+            If you're serious about your preparation but struggling with resources,{" "}
+            <span className="font-semibold text-[#0d1b2a]">reach out personally.</span>
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-gray-600 mb-6 leading-relaxed"
+          >
+            I believe that <span className="font-semibold text-gray-800">dedication and discipline</span> 
+            matter far more than money when it comes to cracking competitive exams.
+            All you need is the right guidance, a clear strategy, and unwavering commitment.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="text-lg font-semibold text-gray-800 mb-8"
+          >
+            I'm here to walk that journey with you — regardless of your financial situation.
+          </motion.p>
+
+          {/* CTA Button */}
+          <motion.button
+          onClick={() => scrollToSection(mentorshipref)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-2 bg-[#0d1b2a] text-white font-semibold px-6 py-3 rounded-md mx-auto shadow-md hover:shadow-lg transition-all"
+          >
+            <Handshake className="w-5 h-5" />
+            Let’s Discuss Your Journey
+          </motion.button>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-sm text-gray-500 mt-4 italic"
+          >
+            No obligation. Just an honest conversation about your goals.
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+    </section>
+
       {/* ===== MENTORSHIP PLANS SECTION ===== */}
       <div
       ref={plansref}
