@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,6 +8,9 @@ export default {
     extend: {
       colors: {
         neon: '#00ffcc',
+      },
+      fontFamily: {
+        playfair: ['"Playfair Display"', 'serif'],
       },
     },
   },
