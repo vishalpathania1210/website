@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import { Heart, Target, Handshake, Sparkles } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Full = () => {
   const mentorshipref = useRef(null);
@@ -27,8 +28,30 @@ const Full = () => {
     },
     onSubmit: (values, { resetForm }) => {
       console.log("Form Data:", values);
-      toast.success("Abhinav will contact you in 24Hrs");
-      resetForm();
+  
+      // Replace these IDs with your actual EmailJS credentials
+      const serviceID = "service_bdxigf7";
+      const templateID = "template_4yk0iwx";
+      const publicKey = "21Dutu_CVxv5zpUtj";
+  
+      const templateParams = {
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        stage: values.stage,
+        message: values.message,
+      };
+  
+      emailjs.send(serviceID, templateID, templateParams, publicKey).then(
+        () => {
+          toast.success("✅ Abhinav will contact you in 24Hrs!");
+          resetForm();
+        },
+        (error) => {
+          console.error("Email sending failed:", error);
+          toast.error("❌ Failed to send message. Please try again.");
+        }
+      );
     },
   });
 
@@ -660,10 +683,15 @@ Small batches, practical strategy, and personal guidance to turn preparation int
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <label className="block font-semibold text-gray-700 mb-1">
+            <label
+            className="block font-semibold text-gray-700 mb-1">
               Current Stage
             </label>
-            <select className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#f1b60f]">
+            <select
+            name="stage"
+            value={formik.values.stage}
+            onChange={formik.handleChange}
+            className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#f1b60f]">
               <option>Select your preparation stage</option>
               <option>Starting out</option>
               <option>Prelims</option>
