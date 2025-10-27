@@ -93,9 +93,9 @@ const Full = () => {
 
           <p className="text-gray-600 mt-6 text-lg leading-relaxed">
             Guided by{" "}
-            <span className="font-semibold text-gray-800">Abhinav Kumar</span> — 
-            6× Prelims qualifier and 3× Mains qualifier, former Unacademy mentor. 
-            Small batches, practical strategy, and personal guidance to turn preparation into results.
+            <span className="font-semibold text-gray-800">Abhinav Dahiya</span> — 
+            6× Prelims and 3× Mains qualifier with years of experience mentoring aspirants toward consistent success.
+Small batches, practical strategy, and personal guidance to turn preparation into results.
           </p>
 
           {/* Buttons */}
@@ -191,7 +191,7 @@ const Full = () => {
       pressure.
     </p>
     <p>
-      As a <span className="font-semibold text-[#0d1b2a]">former Unacademy Mentor</span>, Abhinav has guided hundreds of
+    Through his <span className="font-semibold text-[#0d1b2a]"> mentorship Journey</span>, Abhinav has guided hundreds of
       aspirants on study planning, mindset, and performance improvement.
     </p>
     <p className="text-gray-800 font-semibold italic">
